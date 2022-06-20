@@ -1,0 +1,15 @@
+First Time:
+1. git init
+2. create a remote repository on GitHub
+3. git remote add origin GitHub-link
+4. have some code, then git add and git commit
+5. git push origin master
+
+If you want to create a new feature, then use the Feature Branch Workflow:
+1. create a feature branch, which is a copy of your git history | git branch branch-name
+2. upload feature branch to GitHub | git push origin branch-name
+3. git checkout branch-name; work on the feature; and when done...git add, git commit, and git push
+4. create a "pull request" on GitHub so that others can view and comment on your code
+5. Once approved, then merge feature branch to master branch.
+- merge changed feature branch to unchanged master branch --> merge!
+- merge changed feature branch to changed master branch --> might lead to merge conflict, which must then be resolved manually
