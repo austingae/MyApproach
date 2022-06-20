@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /*screen-size: 800px*/
+    
+    * {
+      box-sizing: content-box;
+    }
+
+    body {
+      margin: 0px;
+    }
+
+    .parent-container {
+      width: 400px;
+      padding: 30px;
+      border-style: solid;
+      border-width: 5px;
+      margin: 0px auto 0px auto;
+
+      /*
+      Parent Div's Width = Child Div's Width + Padding + Border + Margin
+      800px = 400px + (30px + 30px) + (5px + 5px) + margin: 0px auto 0px auto, so (165px + 165px)
+      "Parent Div's Width = Child Div's Width + Padding + Border + Margin" is true. 
+      */
+    }
+
+    .child-container {
+      width: 300px;
+      padding: 20px;
+      border: none;
+      margin: 0rem auto 0rem auto;
+      /*
+      Parent Div's Width = Child Div's Width + Padding + Border + Margin
+      400px = 300px + (20px + 20px) + 0px + margin: 0rem auto 0rem auto, so (30px + 30px)
+      "Parent Div's Width = Child Div's Width + Padding + Border + Margin" is true. 
+      */
+    }
+
+    h1 {
+      width: 100px;
+      padding: 0rem 7px 0rem 7px;
+      margin: 0rem auto 0rem auto;
+      /*
+      Parent Div's Width = Block Element's Width+Padding+Border+Margin
+      300px = 100px + (7px + 7px) + 0px + (93px + 93px)
+      "Parent Div's Width = Block Element's Width+Padding+Border+Margin" is true. 
+      */
+    }
+
+    h2 {
+      /*
+      Parent Div's Width = Block Element's Width+Padding+Border+Margin
+      300px = 300px + 0px + 0px + 0px
+      "Parent Div's Width = Block Element's Width+Padding+Border+Margin" is true.       
+      */
+    }
+
+    p {
+      width: auto;
+      padding: 5px;
+      margin: 8px;
+      /*
+      Parent Div's Width = Block Element's Width+Padding+Border+Margin
+      300px = width: auto, so (274px) + (5px + 5px) + 0px + (8px + 8px)      
+      "Parent Div's Width = Block Element's Width+Padding+Border+Margin" is true. 
+      */
+    }
+
+    .button-1 {
+      /*
+      Parent Div's Width != Inline Element's Width+Padding+Border+Margin
+      300px != 50px + (6px + 6px) + (2px + 2px) + 0px
+      "Parent Div's Width != Inline Element's Width+Padding+Border+Margin" is true. 
+      */
+    }
+
+    .button-2 {
+      width: 200px;
+      padding: 5px;
+      border-style: solid;
+      border-width: 2px;
+      margin: auto;
+      /*
+      Parent Div's Width != Inline Element's Width+Padding+Border+Margin
+      300px != 200px + (5px + 5px) + (2px + 2px) + 0px
+      "Parent Div's Width != Inline Element's Width+Padding+Border+Margin" is true. 
+      */
+    }
+
+  </style>
+</head>
+<body>
+  <section>
+    <div class="parent-container">
+      <div class="child-container">
+        <h1>Hello</h1>
+        <h2>Bye</h2>
+        <p>Adieu! Adieu! Adieu!</p>
+        <button class="button-1">Button-1</button>
+        <button class="button-2">Button-2</button>
+      </div>
+    </div>
+
+  </section>
+</body>
+</html>
+
+<!--
+  HTML & CSS: 
+  1) Mobile First Approach - Yes. 
+  2) Create the HTML layout - Yes. 
+  - 
+  <section>
+    <div class="container">
+    </div>
+  </section>
+  3) Create the HTML elements - Yes. 
+  4) Decorate the HTML elements
+  If * {box-sizing: content-box}
+  - Parent Div's Width = Child Div's Width+Padding+Border+Margin
+  - Parent Div's Width = Block Element's Width+Padding+Border+Margin
+  - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
+-->
+
+<!--
+I created a navigation bar in ReactJS by following my thought process: 
+
+CREATING A NAVIGATION BAR: 
+To install React Router into the project, type in terminal: "npm install react-router-dom@6" - Yes. 
+
+Navigation Bar Process: 
+1) type: import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom" - Yes. 
+2) create the JS files for various pages. - Yes.
+3) import the JS files to App.js - Yes. 
+4) create <router>, <routes>, and <route> - Yes. 
+  <Router>
+    <Routes>
+      <Route path="/our-work"><Our Work /><Route> <--If the path="/our-work", then <OurWork /> will be executed. 
+      ...
+    <Routes>
+  </Router>
+5) Create the navigation bar.
+    1) create the HTML layout - Yes. 
+<nav>
+  <div>
+  </div>
+</nav>
+    2) create the HTML elements - Yes. 
+    <nav>
+  <div>
+    <Link to="/our-work">Our Work</Link> <-- If "Our Work" is clicked, then path will equal "/our-work", which will make <OurWork /> be executed. 
+  </div>
+</nav>
+    3) decorate the HTML elements in CSS 
+        1) Imagine how you want it to look like. - Yes. 
+        2) Then use width, padding, border, and margin. - Yes. 
+        3) Then calculate: - Yes. 
+            If * {box-sizing: content-box}
+            - Parent Div's Width = Child Div's Width+Padding+Border+Margin
+            - Parent Div's Width = Block Element's Width+Padding+Border+Margin
+            - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
+-->
+        
+<!--
+A BUTTON, IF CLICKED, WILL TAKE YOU TO A PAGE:
+1) This button, if clicked, will navigate to a path.
+       import { useNavigate } from "react-router-dom";
+       let navigate = useNavigate();
+       <button onClick={() => {navigate("../events/asean-meeting")}}> Learn More </button>
+        
+2) That path will go to a Component.
+        <Route path="/events/:event" element={<EventPage />}></Route>
+
+3) Then, in the Component, get :event, and then display the right page.
+        import { useParams } from "react-router-dom";
+        let { event } = useParams();
+        
+        if (event == "asean-meeting") {
+          return (
+              <div>ASEAN MEETING TODAY</div>
+        );
+        }
+        else if (event == "world-war-two") {
+          return (
+              <div>WORLD WAR II CONFERENCE</div>
+        );
+        }          
+-->
