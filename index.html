@@ -113,7 +113,7 @@
 </html>
 
 <!--
-  HTML & CSS Approach: 
+HTML & CSS Approach: 
   1) Mobile First Approach - Yes. 
   2) Create the HTML layout - Yes. 
   - 
@@ -129,10 +129,11 @@
   - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
 -->
 
-<!--
-I created a navigation bar in ReactJS by following my thought process: 
 
-CREATING A NAVIGATION BAR: 
+
+<!--
+BUILDING A NAVIGATION BAR: 
+
 To install React Router into the project, type in terminal: "npm install react-router-dom@6" - Yes. 
 
 Navigation Bar Process: 
@@ -147,7 +148,6 @@ Navigation Bar Process:
     <Routes>
   </Router>
 5) Create the navigation bar.
-<<<<<<< HEAD
     1) Mobile First Approach
     2) create the HTML layout - Yes. 
 <nav>
@@ -169,7 +169,9 @@ Navigation Bar Process:
             - Parent Div's Width = Block Element's Width+Padding+Border+Margin
             - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
 -->
-        
+
+
+
 <!--
 A BUTTON, IF CLICKED, WILL TAKE YOU TO A PAGE:
 1) This button, if clicked, will navigate to a path.
@@ -196,3 +198,49 @@ A BUTTON, IF CLICKED, WILL TAKE YOU TO A PAGE:
         }          
 -->
 
+
+
+<!-- 
+IF HAMBURGER-MENU-BUTTON CLICKED, THEN SHOW MENU:
+1. Mobile First Approach
+2 and 3. Create the HTML layout and elements
+
+<button className='nav-bar__hamburger-menu-button'><FontAwesomeIcon className='nav-bar__hamburger-menu-icon' icon={faBars} size="2x" /></button>
+
+<menu>
+  <div className='menu-container'>
+    <Link className='menu__link' to="/" >Home</Link>
+    <Link className='menu__link' to="/events">Events</Link>
+    <Link className='menu__link' to="/our-work">Our Work</Link>
+    <Link className='menu__link' to="/about">About</Link>
+  </div>
+</menu>
+
+3. Decorate the HTML elements in CSS
+
+menu {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+
+  //Before the .nav-bar__hamburger-menu-button clicked, left: -100%. Hence, menu not shown on the screen.
+  //After the .nav-bar__hamburger-menu-button clicked, left: 0%. Hence, menu shown on the screen.
+  left: -100%; 
+}
+
+4. Add onClick to hamburger-menu-button
+
+<button className='nav-bar__hamburger-menu-button' onClick={() => {
+              document.getElementsByTagName("menu")[0].style.cssText = "left: 0%; transition-property: left; transition-duration: 1s;";
+            }}><FontAwesomeIcon className='nav-bar__hamburger-menu-icon' icon={faBars} size="2x" /></button>
+
+5. Add onClick to <Link>
+      <menu>
+        <div className='menu-container'>
+          <Link className='menu__link' to="/" onClick={() => {document.getElementsByTagName("menu")[0].style.cssText = "left: -100%; transition-property: left; transition-duration: 1s;";}}>Home</Link>
+          <Link className='menu__link' to="/events" onClick={() => {document.getElementsByTagName("menu")[0].style.cssText = "left: -100%; transition-property: left; transition-duration: 1s;";}}>Events</Link>
+          <Link className='menu__link' to="/our-work" onClick={() => {document.getElementsByTagName("menu")[0].style.cssText = "left: -100%; transition-property: left; transition-duration: 1s;";}}>Our Work</Link>
+          <Link className='menu__link' to="/about" onClick={() => {document.getElementsByTagName("menu")[0].style.cssText = "left: -100%; transition-property: left; transition-duration: 1s;";}}>About</Link>
+        </div>
+      </menu>
+-->
