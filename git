@@ -13,3 +13,12 @@ If you want to create a new feature, then use the Feature Branch Workflow:
 5. Once approved, then merge feature branch to master branch.
 - merge changed feature branch to unchanged master branch --> merge!
 - merge changed feature branch to changed master branch --> might lead to merge conflict, which must then be resolved manually
+
+
+
+
+
+GitHub Pages:
+How to Deploy a React App to GitHub Pages: https://www.youtube.com/watch?v=Q9n2mLqXFpU&list=LL&index=1&ab_channel=PedroTech
+
+Once React App has been Deployed to GitHub Pages, How to Fix 404 Error: https://www.youtube.com/watch?v=fuGu-Ponjf8&ab_channel=ToThePointCode
