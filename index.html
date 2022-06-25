@@ -113,25 +113,6 @@
 </html>
 
 <!--
-HTML & CSS Approach: 
-  1) Mobile First Approach - Yes. 
-  2) Create the HTML layout - Yes. 
-  - 
-  <section>
-    <div class="container">
-    </div>
-  </section>
-  3) Create the HTML elements - Yes. 
-  4) Decorate the HTML elements
-  If * {box-sizing: content-box}
-  - Parent Div's Width = Child Div's Width+Padding+Border+Margin
-  - Parent Div's Width = Block Element's Width+Padding+Border+Margin
-  - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
--->
-
-
-
-<!--
 BUILDING A NAVIGATION BAR: 
 
 To install React Router into the project, type in terminal: "npm install react-router-dom@6" - Yes. 
@@ -169,36 +150,6 @@ Navigation Bar Process:
             - Parent Div's Width = Block Element's Width+Padding+Border+Margin
             - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
 -->
-
-
-
-<!--
-A BUTTON, IF CLICKED, WILL TAKE YOU TO A PAGE:
-1) This button, if clicked, will navigate to a path.
-       import { useNavigate } from "react-router-dom";
-       let navigate = useNavigate();
-       <button onClick={() => {navigate("../events/asean-meeting")}}> Learn More </button>
-        
-2) That path will go to a Component.
-        <Route path="/events/:event" element={<EventPage />}></Route>
-
-3) Then, in the Component, get :event, and then display the right page.
-        import { useParams } from "react-router-dom";
-        let { event } = useParams();
-        
-        if (event == "asean-meeting") {
-          return (
-              <div>ASEAN MEETING TODAY</div>
-        );
-        }
-        else if (event == "world-war-two") {
-          return (
-              <div>WORLD WAR II CONFERENCE</div>
-        );
-        }          
--->
-
-
 
 <!-- 
 IF HAMBURGER-MENU-BUTTON CLICKED, THEN SHOW MENU:
@@ -243,4 +194,52 @@ menu {
           <Link className='menu__link' to="/about" onClick={() => {document.getElementsByTagName("menu")[0].style.cssText = "left: -100%; transition-property: left; transition-duration: 1s;";}}>About</Link>
         </div>
       </menu>
+-->
+
+
+
+<!--
+HTML & CSS & Javascript Approach: 
+  1) Mobile First Approach - Yes. 
+  2) Create the HTML layout - Yes. 
+  - 
+  <section>
+    <div class="container">
+    </div>
+  </section>
+  3) Create the HTML elements - Yes. 
+  4) Decorate the HTML elements
+  If * {box-sizing: content-box}
+  - Parent Div's Width = Child Div's Width+Padding+Border+Margin
+  - Parent Div's Width = Block Element's Width+Padding+Border+Margin
+  - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
+  5) Javascript 
+-->
+
+
+
+<!--
+A BUTTON, IF CLICKED, WILL TAKE YOU TO A PAGE:
+1) This button, if clicked, will navigate to a path.
+       import { useNavigate } from "react-router-dom";
+       let navigate = useNavigate();
+       <button onClick={() => {navigate("../events/asean-meeting")}}> Learn More </button>
+        
+2) That path will go to a Component.
+        <Route path="/events/:event" element={<EventPage />}></Route>
+
+3) Then, in the Component, get :event, and then display the right page.
+        import { useParams } from "react-router-dom";
+        let { event } = useParams();
+        
+        if (event == "asean-meeting") {
+          return (
+              <div>ASEAN MEETING TODAY</div>
+        );
+        }
+        else if (event == "world-war-two") {
+          return (
+              <div>WORLD WAR II CONFERENCE</div>
+        );
+        }          
 -->
