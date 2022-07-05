@@ -1,4 +1,4 @@
-FontAwesome Download Process:
+## FontAwesome Download Process for React:
 1) npm i --save @fortawesome/fontawesome-svg-core
 2) npm i --save @fortawesome/free-solid-svg-icons
    npm i --save @fortawesome/free-regular-svg-icons
