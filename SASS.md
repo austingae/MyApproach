@@ -23,19 +23,17 @@ Nesting gives hierarchy in CSS and, therefore, makes CSS more readable than Vani
 >div {
 >&nbsp;&nbsp;&nbsp;background-color: black;
 >
->  a {
-> &nbsp;&nbsp;&nbsp;text-decoration: none;
-> &nbsp;&nbsp;&nbsp;}
+> &nbsp;&nbsp;&nbsp;a {
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-decoration: none;
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 >
->  p {
->  &nbsp;&nbsp;&nbsp;font-size: 25px;
->  &nbsp;&nbsp;&nbsp;color: blue;
->  &nbsp;&nbsp;&nbsp;}
+>  &nbsp;&nbsp;&nbsp;p {
+>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 25px;
+>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: blue;
+>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 >}
 
 ### Partial
-A SCSS file that contains CSS, and you include this SCSS file in other SCSS files. A partial will be named with an underscore, like this: _partial.scss
-
 Partial - a SCSS file that contain CSS in which its variables, mixins, and functions can be used by other SCSS files via @use. A partial will be named with an underscore, like this: __partial.scss
 
 >##### _partial.scss
@@ -44,7 +42,7 @@ Partial - a SCSS file that contain CSS in which its variables, mixins, and funct
 >##### styles.scss
 >@use '_partial.scss' // styles.scss can use _partial.scss's variables, mixins, and functions. 
 >p {
->  color: $primary-color;
+>  color: partial.$primary-color;
 >}
 
 ### Mixin
@@ -58,7 +56,7 @@ A snippet of CSS code that you can reuse. You must use "@mixins" to create the m
 
 > ##### styles.scss 
 >  button {
->&nbsp;&nbsp;&nbsp;@include buttonStyle;
+>&nbsp;&nbsp;&nbsp;@include partial.buttonStyle;
 >&nbsp;&nbsp;&nbsp;}
 >
 
