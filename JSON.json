@@ -1,0 +1,22 @@
+{
+  "What's JSON": "JSON, or Javascript Object Notation, is a text-based format for representing structured data based on Javascript object syntax. JSON exists as a string and, therefore, needs to be converted to a Javascript object when you want to use the data.",
+  "How do I access JSON file in my code?": [
+    {
+      "FIRST LINE": "let response = await fetch(`https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/countries.json`);",
+      "Explanation of fetch(JSON File)": "fetch(JSON FILE) fetches the JSON file"
+    }, 
+    {
+      "SECOND LINE": "let data = await response.json();",
+      "Explanation of .json()": ".json() takes JSON file as an input and outputs a Javascript Object"
+    }
+  ],
+  "What's JSON.parse() and JSON.stringify()": [
+    "JSON.parse() means turning data from string to Javascript Object",
+    "JSON.stringify() means turning data from Javascript Object to String"
+  ],
+  "JSON Sources": [
+    "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON#active_learning_working_through_a_json_example",
+    "https://www.codegrepper.com/code-examples/javascript/async%2Fawait+to+fetch+the+json+data"
+  ]
+}
+

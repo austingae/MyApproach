@@ -1,0 +1,7 @@
+- HTML
+- CSS
+- Javascript
+- SASS
+- ReactJS
+- Next.js
+- JSON
