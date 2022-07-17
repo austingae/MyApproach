@@ -1,13 +1,5 @@
 /*
-getStaticProps will get the data at only build time. 
-Therefore, if I add new data, then the website page will not show the new data.
-To show the new data, I will need to do build again.
-CORRECT!
+getStaticProps() fetches the data at build time.
 
-
-
-getServerSideProps will get the data before the website page loads. 
-Therefore, if I add new data, and I refresh the website page, then the website page will
-show the new data. 
-CORRECT!
+getServerSideProps() fetches the data at page request. Page request means refreshing the page or typing a URL address (https://stackoverflow.com/questions/62631712/in-the-nextjs-tutorial-what-is-considered-as-a-single-request).
 */
